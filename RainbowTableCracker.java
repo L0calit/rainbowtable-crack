@@ -3,13 +3,13 @@ package com.mieuxcoder.rainbowtable;
 import java.io.UTFDataFormatException;
 import java.nio.charset.Charset;
 
-public class RainbowTableCracker2 {
+public class RainbowTableCracker {
 	private RainbowTable rainbowTable;
 	private byte[] hash;
 	private int nbReduction;
 	private ReduceHash reduction;
 
-	public RainbowTableCracker2(RainbowTable rainbowTable, byte[] hash, int nbReduction) {
+	public RainbowTableCracker(RainbowTable rainbowTable, byte[] hash, int nbReduction) {
 		if (rainbowTable == null) {
 			throw new IllegalArgumentException("You haven't entered a rainbow Table");
 		}
@@ -37,7 +37,7 @@ public class RainbowTableCracker2 {
 			return;
 		}
 		String head = this.rainbowTable.getHead(tail);
-		findPassword();
+		findPassword(head);
 	}
 	
 	private String findTail(byte[] hash, int startIndex) {
